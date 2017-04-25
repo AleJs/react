@@ -46,7 +46,7 @@ setInterval(reloj,1000);
 **/
 /*
 * ejercicio relog java script  react jsx
-**/
+
 
 const app = document.getElementById('app');
 function reloj() {
@@ -57,3 +57,77 @@ function reloj() {
 }
 
 setInterval(reloj,1000);
+
+
+**/
+//componentes
+/*
+function Saludar  (props){
+
+    return <h1>hola {props.name}</h1>
+
+}
+function Saludar2  (props){
+
+    return 
+
+
+}
+**/
+// esto es una funcion en em6 
+/*
+const Paramore = props => {
+        return(
+            <div>
+               <img src={props.img} alt={props.name} /> 
+                <p> {props.name}</p>
+                </div>
+        )
+
+};
+ReactDOM.render(<div><Paramore img="https://ichef.bbci.co.uk/images/ic/256x256/p050jrsf.jpg" name="hard times 2017" /></div>, document.getElementById('app')) **/
+//esto es una funcion mas simple, no se necesitan las llaves como en la funcion pasada si vamos a retornar un valor sin alguna expresion antes, tambien q es em6 no necesita llave actualizate rackaracka
+
+const Avatar = props => <img src={props.user.img} alt={props.user.name} /> ;
+const Name = props => <p> {props.user.name}</p> ; 
+
+const Paramore = props => {
+    return (
+        <div className="sdsd">
+
+            <Avatar user={props.user} />
+            <Name user= { props.user} />
+        </div>
+    )
+
+}
+//esto se puede decir que es un array de objeto 
+const miembros =[ {
+
+    name: 'Hayley',
+    img: 'https://s.yimg.com/wv/images/92ac33bcbf47faa5ec74a2fe18cb0f91_96.jpeg'
+},{
+     name: 'Taylor',
+    img: 'https://pbs.twimg.com/profile_images/1500687149/taylor_sheckler_reasonably_small.jpg'
+}];
+//y con esto se lo recorres
+/*
+const UserList =   props => {
+        const userList =  props.list.map((user,i) => <Paramore user={list} key = {i}/>);
+            return(
+                <div className= "dsds">
+
+                    {userlist}
+
+                    </div>
+            )
+};**/
+ReactDOM.render(
+<div>
+<  Paramore user={miembros[1]}  />
+<  Paramore user={miembros[0]}  />
+</div>
+,
+
+ document.getElementById('app'))  
+ 
