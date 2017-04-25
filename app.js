@@ -104,29 +104,30 @@ const Paramore = props => {
 //esto se puede decir que es un array de objeto 
 const miembros =[ {
 
-    name: 'Hayley',
-    img: 'https://s.yimg.com/wv/images/92ac33bcbf47faa5ec74a2fe18cb0f91_96.jpeg'
+    Name: 'Hayley',
+    avatar: 'https://s.yimg.com/wv/images/92ac33bcbf47faa5ec74a2fe18cb0f91_96.jpeg'
 },{
-     name: 'Taylor',
-    img: 'https://pbs.twimg.com/profile_images/1500687149/taylor_sheckler_reasonably_small.jpg'
+     user: 'Taylor',
+    avatar : 'https://pbs.twimg.com/profile_images/1500687149/taylor_sheckler_reasonably_small.jpg'
 }];
 //y con esto se lo recorres
-/*
+
 const UserList =   props => {
-        const userList =  props.list.map((user,i) => <Paramore user={list} key = {i}/>);
+    const list= props.list;
+
+        const userList =  list.map((user,i) => <Paramore user={list} key = {i}/>);
             return(
                 <div className= "dsds">
 
-                    {userlist}
+                    {userList}
 
                     </div>
             )
-};**/
+};
 ReactDOM.render(
-<div>
-<  Paramore user={miembros[1]}  />
-<  Paramore user={miembros[0]}  />
-</div>
+
+<  UserList list={miembros}  />
+
 ,
 
  document.getElementById('app'))  
